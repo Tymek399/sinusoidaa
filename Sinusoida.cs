@@ -23,16 +23,16 @@ class SinusoidApp : Form
         Graphics g = e.Graphics;
         Pen pen = new Pen(Color.Blue, 2);
 
-        // Rysowanie osi X i Y
-        g.DrawLine(Pens.Black, margin, height / 2, width - margin, height / 2); // Oś X
-        g.DrawLine(Pens.Black, margin, margin, margin, height - margin); // Oś Y
+        // Oś X i Y
+        g.DrawLine(Pens.Black, margin, height / 2, width - margin, height / 2); // X
+        g.DrawLine(Pens.Black, margin, margin, margin, height - margin); // Y
 
-        // Rysowanie sinusoidy
-        double scale = 20; // Skala, aby zmieścić sinusoidę na ekranie
+        // Rysowanie 
+        double scale = 20; // Skala
         for (int x = margin; x < width - margin; x++)
         {
-            double t = (x - margin) / scale; // Wartość argumentu (czasu)
-            double y = Math.Sin(t); // Wartość sinusoidy dla danego czasu
+            double t = (x - margin) / scale; // Czas
+            double y = Math.Sin(t); // Wartość sinusoidy w czasie
 
             // Przekształcenie wartości sinusoidy na współrzędną y na ekranie
             int screenY = height / 2 - (int)(y * scale);
